@@ -1,0 +1,875 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+:root {
+  --bg-color: #fff;
+  --color-text: #000;
+  --main-color: #ccc;
+  --header-bg: #f9f9f9;
+  --Hashtag-color: rgba(0, 0, 0, 0.05);
+  --SpanVideo: rgba(0, 0, 0, 0.05);
+  --serach-bg: #fff;
+  --spanVideoColor: #272727;
+  --Hashtag-bg: #f9f9f9;
+  --red-color: #ff3150;
+  --section-color: #eff7fa;
+  --green-color: #33d1cc;
+  --yello-color: #ffc400;
+  --dark-color: #19283f;
+  --black-color: #000016;
+  --none-color:#DDD0C8;
+  --color-Next: #000;
+  --large-size: 20px;
+  --medueim-size: 15px;
+  --small-size: 10px;
+  --V-small-size: 5px;
+  --Bold-size: 700;
+  --med-size: 500;
+  --Small-size: 300;
+}
+
+li {
+  list-style: none;
+}
+
+.Dark-mode {
+  --spanVideoColor: #ccc;
+  --bg-color: #0b0b0b;
+  --color-text: #fff;
+  --header-bg: #0b0b0b;
+  --main-color:#2c2c2c;
+  --Hashtag-color: rgba(255, 255, 255, 0.05);
+  --SpanVideo: rgba(255, 255, 255, 0.1);
+  --serach-bg: #000;
+  --Hashtag-bg: #0b0b0b;
+  --color-Next: #fff;
+}
+
+.BasicMode {
+  --color-text: #000;
+}
+
+.orangBlack {
+  --color-text: rgb(133, 76, 10);
+}
+
+.red {
+  --color-text: #fd1d1d;
+}
+
+.yello {
+  --color-text: #ffc400;
+}
+
+.green {
+  --color-text: #006d6a;
+}
+
+.blue {
+  --color-text: rgb(0, 75, 140);
+}
+
+.beige {
+  --color-text: #DDD0C8;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  z-index: 999;
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: var(--header-bg);
+}
+.Header .Left-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Header .Left-side img {
+  width: 150px;
+}
+.Header .Left-side i {
+  padding-right: 20px;
+}
+.Header .Mid-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Header .Mid-side form {
+  display: flex;
+  width: 600px;
+  height: 40px;
+  align-items: center;
+}
+.Header .Mid-side form .Search {
+  background-color: var(--serach-bg);
+  width: 550px;
+  border: 1px solid var(--main-color);
+  border-radius: 20px 0 0 20px;
+  padding: 0 15px;
+  height: 40px;
+  border-right: none;
+  outline: none;
+  color: var(--color-text);
+}
+.Header .Mid-side form .SearchIcon {
+  background-color: var(--bg-color);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid var(--main-color);
+  height: 40px;
+  padding: 12px 20px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Header .Mid-side form .record {
+  margin-left: 20px;
+  background-color: var(--main-color);
+  padding: 15px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.6s ease;
+}
+.Header .Mid-side form .record:hover {
+  background-color: var(--serach-bg);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.Header .Right-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+}
+.Header .Right-side .Tools {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.Header .Right-side .PhotoAccount {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Header .Right-side .Create .createicon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.Aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  padding: 20px 20px 50px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 999;
+}
+.Aside .Card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
+  padding: 5px;
+  transition: 0.6s ease;
+  border-radius: 10px;
+}
+.Aside .Card:hover {
+  background-color: var(--SpanVideo);
+}
+.Aside .Card a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Aside .Card i {
+  width: 20px;
+  height: 20px;
+}
+.Aside .Card span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+  flex-basis: 0.000000001px;
+  position: relative;
+  left: 20px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+.Aside .Card-spici {
+  border-radius: 10px;
+  background-color: var(--SpanVideo);
+}
+.Aside .Card-spici span {
+  font-weight: 700;
+}
+.Aside .ImageLogo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.Aside .System {
+  margin: 10px 10px 40px;
+}
+.Aside .System .System-one {
+  margin-bottom: 10px;
+}
+.Aside .System h1 {
+  color: #606060;
+  font-size: 0.9rem;
+}
+.Aside .System .System-end {
+  margin-top: 10px;
+}
+
+.showMore {
+  cursor: pointer;
+}
+
+.ImageCard {
+  overflow-x: hidden;
+}
+.ImageCard .ChannelSubscribe {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.HeadingText {
+  color: var(--color-text);
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+::-moz-placeholder {
+  font-weight: 600;
+}
+
+::placeholder {
+  font-weight: 600;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  padding-left: 270px;
+  padding-top: 50px;
+  background-color: var(--bg-color);
+  height: 100%;
+}
+.Main .Hashtags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: fixed;
+  top: 55px;
+  left: 258px;
+  height: 60px;
+  gap: 10px;
+  background-color: var(--Hashtag-bg);
+  margin: 0px 20px 10px 10px;
+  z-index: 99;
+}
+.Main .Hashtags .Hashtag {
+  margin: 12px 3px;
+  background-color: var(--Hashtag-color);
+  padding: 6px 12px;
+  border: 1px solid var(--Hashtag-color);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: 0.5s ease;
+  white-space: nowrap;
+  font-size: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 30px;
+}
+.Main .Hashtags .Hashtag:hover {
+  background-color: #ccc;
+}
+.Main .Hashtags .arrow {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s ease;
+  position: absolute;
+  right: 0;
+}
+.Main .Hashtags .arrow:hover {
+  background-color: #ccc;
+}
+.Main .Hashtags .Primary {
+  background-color: var(--color-text);
+  color: var(--bg-color);
+}
+.Main .videos {
+  margin-top: 80px;
+}
+.Main .videos .videocard .Video {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 380.66px;
+  margin: 10px 5px;
+}
+.Main .videos .videocard .Video .thumbPhoto {
+  width: 100%;
+  height: 220.73px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+.Main .videos .videocard .Video .thumbPhoto:hover {
+  border-radius: 0;
+  transform: scale(1.03);
+}
+.Main .videos .videocard .Video .Details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.Main .videos .videocard .Video .Details .ProfilePhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.Main .videos .videocard .Video .Details .DetailText {
+  display: flex;
+  flex-direction: column;
+}
+.Main .videos .videocard .Video .Details .DetailText span {
+  font-weight: 400;
+  color: var(--SpanVideo);
+}
+.Main .videos .videocard .Video .Details .DetailText .NameBrand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+.Main .videos .videocard .Video .Details .DetailText .NameBrand .Icon {
+  color: var(--SpanVideo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Main .videos .videocard .Video .Details .DetailText .NameBrand span {
+  color: var(--spanVideoColor);
+}
+.Main .videos .videocard .Video .Details .DetailText .TimeView {
+  color: var(--spanVideoColor);
+}
+.Main .videos .videocard .Video .Details .DetailText h3 {
+  line-height: 2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.Main .videos .videocard .Line {
+  margin: 8px 0;
+  width: 80vw;
+}
+.Main .Shotrts {
+  margin: 20px 10px;
+}
+.Main .Shotrts .HeadingDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  right: -10px;
+  cursor: pointer;
+}
+.Main .Shotrts .HeadingDiv .PhotoShort {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.Main .Shotrts .HeadingDiv .HeadingSection {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+.Main .Shotrts .ShortCards {
+  margin: 20px 0;
+}
+.Main .Shotrts .ShortCards .ShortCard {
+  display: flex;
+  flex-direction: column;
+  width: 230.19px;
+  height: 343.23px;
+  padding: 0 10px;
+  margin: 40px 0;
+}
+.Main .Shotrts .ShortCards .ShortCard .ImageShort {
+  height: 343.23px;
+  width: 100%;
+}
+.Main .Shotrts .ShortCards .ShortCard .ImageShort .ImageDiv {
+  width: 100%;
+  height: 390px;
+  border-radius: 10px;
+}
+.Main .Shotrts .ShortCards .ShortCard .Details {
+  position: relative;
+  top: 65px;
+  margin-bottom: 30px;
+}
+.Main .Shotrts .ShortCards .ShortCard .Details h3 {
+  font-weight: 700;
+  color: var(--color-text);
+}
+.Main .Shotrts .ShortCards .ShortCard .Details h5 {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+.Main .IconArrowBott {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5px;
+  transition: 0.5s ease;
+}
+.Main .IconArrowBott:hover {
+  background-color: #ababab;
+}
+.Main .IconArrowBott .arrowBottom {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LineHight {
+  margin: -10px 0 10px 0;
+}
+
+/* width */
+.Aside::-webkit-scrollbar {
+  width: 7px;
+  color: white;
+}
+
+/* Track */
+.Aside::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 20px;
+  color: white;
+  visibility: hidden;
+}
+
+/* Handle */
+.Aside::-webkit-scrollbar-thumb {
+  background: rgb(151, 116, 116);
+  border-radius: 20px;
+  color: white;
+}
+
+/* Handle on hover */
+.Aside::-webkit-scrollbar-thumb:hover {
+  background: rgb(151, 116, 116);
+  display: block;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  color: white;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 20px;
+  color: white;
+  visibility: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 20px;
+  display: none;
+  color: white;
+}
+
+.JsMenu {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 999;
+  right: 20px;
+  background-color: var(--bg-color);
+  padding: 10px;
+  margin-top: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.JsMenu .HeaderJsmenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.JsMenu .HeaderJsmenu img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.JsMenu .HeaderJsmenu .NameAccountJsHeader {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+}
+.JsMenu .HeaderJsmenu .NameAccountJsHeader .AccountTag {
+  position: relative;
+  color: var(--color-text);
+}
+.JsMenu .HeaderJsmenu .NameAccountJsHeader .AlertGoogle {
+  font-size: 1rem;
+  color: #065fd4;
+}
+.JsMenu .LineJsHeaderMain {
+  width: 100%;
+  margin: 15px 0;
+  border-color: #d0d0d0;
+}
+.JsMenu .MainJsmenu {
+  display: flex;
+  flex-direction: column;
+}
+.JsMenu .MainJsmenu .CardJsMenuMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  transition: 0.7s ease;
+  padding: 3px;
+  border-radius: 10px;
+}
+.JsMenu .MainJsmenu .CardJsMenuMain:hover {
+  background-color: var(--main-color);
+}
+.JsMenu .MainJsmenu .CardJsMenuMain .TextSpanDescriptionCard {
+  padding-left: 12px;
+  color: var(--color-text);
+}
+.JsMenu .MainJsmenu .cardLine2 {
+  margin: 5px 0 0;
+}
+.JsMenu .MainJsmenu .SpecialCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.JsMenu .MainJsmenu .SpecialCard .LeftSideHeaderJsCardSpecial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.JsMenu .MainJsmenu .SpecialCard .IconJsArrow {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 8px;
+}
+
+.HideDisp {
+  display: none;
+}
+
+.DetailText h3, .DetailText h5 {
+  color: var(--color-text);
+}
+
+i {
+  color: var(--color-text);
+}
+
+.AdsDev {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.AdsDev .IconDivAD {
+  padding-left: 100px;
+}
+
+.Video button {
+  width: 100%;
+  background-color: var(--SpanVideo);
+  margin-top: 5px;
+  border-radius: 15px;
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.DivNotifi {
+  background-color: #f32;
+  color: #fff;
+  padding: 0 4px;
+  width: 22px;
+  height: 17px;
+  border-radius: 22px;
+  text-align: center;
+  position: relative;
+  right: 10px;
+  bottom: 1px;
+  font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  .Header .Mid-side {
+    display: none;
+  }
+  .Aside {
+    display: none;
+  }
+  .Main {
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .Header .Mid-side {
+    display: none;
+  }
+  .Aside .Card {
+    display: flex;
+    flex-direction: column;
+  }
+  .TopEnd {
+    display: none;
+  }
+  .LineBreak {
+    display: none;
+  }
+  .Aside {
+    width: 100px;
+  }
+  .HeadingText {
+    display: none;
+  }
+  .Aside .ImageCard, .showMore {
+    display: none;
+  }
+  .Main {
+    margin-left: -180px;
+  }
+  .Main .videos .videocard .Video {
+    width: 310px;
+  }
+  .Main .Shotrts .ShortCards .ShortCard {
+    margin: 80px 0;
+  }
+  .Main .IconArrowBott {
+    margin-top: 30px;
+  }
+  .Main .Hashtags .Hashtag {
+    font-size: 10px;
+  }
+}
+@media (max-width: 350px) {
+  .Left-side img {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .Main .Hashtags {
+    display: none;
+  }
+  .Main .Shotrts .ShortCards .ShortCard {
+    margin: 84px 0;
+  }
+  .Main .IconArrowBott {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1700px) {
+  .Video {
+    width: 320px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .Main .videos .videocard .Video {
+    width: 340px;
+  }
+}
+.BaseDis {
+  display: flex;
+}
+
+@media (min-width: 1280px) and (max-width: 1530px) {
+  .Aside {
+    width: 110px;
+  }
+  .Aside .Card {
+    display: flex;
+    flex-direction: column;
+  }
+  .Aside .Card span {
+    left: auto;
+  }
+  .Aside .TopEnd {
+    display: none;
+  }
+  .Main {
+    margin-left: -155px;
+  }
+  .Main .Hashtags {
+    left: 105px;
+  }
+  .Main .Shotrts .ShortCards .ShortCard {
+    margin: 70px 0;
+  }
+}
+@media (min-width: 991px) and (max-width: 1280px) {
+  .Main .Shotrts .ShortCards .ShortCard {
+    margin: 80px 0;
+  }
+}
+.ColAside {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowAside {
+  display: flex;
+  flex-direction: row;
+}
+
+.block {
+  display: block;
+}
+
+.NoneDisplay {
+  display: none;
+}
+
+.FlexDisb {
+  display: flex;
+}
+
+.spanLeft {
+  left: auto;
+  font-size: 0.9rem;
+}
+
+.ColorNone {
+  display: none;
+}
+
+.colors {
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin: 5px 0;
+  justify-content: center;
+  list-style: none;
+}
+.colors .color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.colors .BasicWhite {
+  background-color: #fff;
+  list-style: none;
+}
+.colors .Basic {
+  list-style: none;
+  background-color: var(--color-Next);
+}
+.colors .red {
+  list-style: none;
+  background-color: red;
+}
+.colors .green {
+  list-style: none;
+  background-color: green;
+}
+.colors .blue {
+  list-style: none;
+  background-color: blue;
+}
+.colors .yello {
+  list-style: none;
+  background-color: #ffc400;
+}
+.colors .beige {
+  list-style: none;
+  background-color: #DDD0C8;
+}
+.colors .orangBlack {
+  background-color: rgb(133, 76, 10);
+}
+
+.active {
+  transform: scale(1.1);
+}
+
+.nonedisp {
+  display: none;
+}/*# sourceMappingURL=Style.css.map */

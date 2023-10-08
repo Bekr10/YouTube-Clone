@@ -1,0 +1,951 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 15px;
+}
+
+:root {
+    // Colors
+
+    --bg-color: #fff;
+    --color-text: #000;
+    --main-color : #ccc;
+    --header-bg : #f9f9f9;
+    --Hashtag-color : rgba(0, 0, 0, 0.05);
+    --SpanVideo : rgba(0, 0, 0, 0.05);
+    --serach-bg: #fff;
+    --spanVideoColor: #272727;
+    --Hashtag-bg: #f9f9f9;
+    --red-color: #ff3150;
+    --section-color: #eff7fa;
+    --green-color: #33d1cc;
+    --yello-color: #ffc400;
+    --dark-color: #19283f;
+    --black-color: #000016;
+    --none-color:#DDD0C8;
+    --color-Next : #000;
+    // Font size
+    
+    --large-size : 20px;
+    --medueim-size : 15px;
+    --small-size : 10px;
+    --V-small-size : 5px;
+    
+    // Wight
+    
+    --Bold-size : 700;
+    --med-size : 500;
+    --Small-size : 300;
+    
+}
+
+@mixin Circle($dimensions){
+    width: $dimensions;
+    height: $dimensions;
+    border-radius: 50%;
+}
+
+
+
+li{
+    list-style: none
+}
+.Dark-mode {
+    --spanVideoColor: #ccc;
+    --bg-color: #0b0b0b;
+    --color-text: #fff;
+    --header-bg: #0b0b0b;
+    --main-color:#2c2c2c;
+    --Hashtag-color: rgba(255, 255, 255, 0.05);
+    --SpanVideo : rgba(255, 255, 255, 0.1);
+    --serach-bg: #000;
+    --Hashtag-bg: #0b0b0b;
+    --color-Next : #fff;
+}
+.BasicMode{
+    --color-text: #000;
+
+}
+.orangBlack{
+    --color-text : rgb(133, 76, 10);
+}
+.red {
+    --color-text: #fd1d1d;
+}
+
+.yello {
+    --color-text: #ffc400;
+}
+
+.green {
+    --color-text: #006d6a;
+}
+
+.blue{
+    --color-text: rgb(0, 75, 140);
+}
+.beige{
+    --color-text: #DDD0C8;
+}
+
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    z-index: 999;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: var(--header-bg);
+    .Left-side{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img{
+            width: 150px;
+        }
+        i{
+            padding-right: 20px;
+        }
+    }
+    .Mid-side{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        form{
+            display: flex;
+            width: 600px;
+            height: 40px;
+            align-items: center;
+            
+            .Search{
+                background-color: var(--serach-bg);
+                width: 550px;
+                border: 1px solid var(--main-color);
+                border-radius: 20px 0 0 20px;
+                padding: 0 15px;
+                height: 40px;
+                border-right: none;
+                outline: none;
+                color: var(--color-text);
+            }
+            .SearchIcon{
+                background-color: var(--bg-color);
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border: 1px solid var(--main-color);
+                height: 40px;
+                padding: 12px 20px;
+                width: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // border-right: none;
+            }
+            .record{
+                margin-left: 20px;
+                background-color: var(--main-color);
+                padding: 15px;
+                @include Circle(33px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: .6s ease;
+                &:hover{
+                    background-color: var(--serach-bg);
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                }
+            }
+        }
+    }
+    .Right-side{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 22px;
+        .Tools{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .PhotoAccount{
+            @include Circle(30px);
+            cursor: pointer;
+        }
+        .Create{
+            .createicon{
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+.Aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    padding: 20px 20px 50px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 60px;
+    left: 00;
+    z-index: 999;
+    // background-color: var(--header-bg);
+    .Card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 0;
+        width: 200px;
+        padding: 5px;
+        transition: .6s ease;
+        border-radius: 10px;
+        &:hover{
+            background-color: var(--SpanVideo);
+        }
+        a{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        i{
+            width: 20px;
+            height: 20px;
+        }
+        span{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            flex: 1;
+            flex-basis: 1e-9px;
+            position: relative;
+            left: 20px;
+            color: var(--color-text);
+            font-size: .9rem;
+        }
+        }
+
+    .Card-spici{
+        // height: 50px;
+        border-radius: 10px;
+        background-color: var(--SpanVideo);
+        span{
+            font-weight: 700;
+        }
+    }
+    .ImageLogo{
+    @include Circle(30px);
+    }
+    .System {
+    
+        margin: 10px 10px 40px;
+        .System-one {
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #606060;
+            font-size: .9rem;
+        }
+        .System-end {
+            margin-top: 10px;
+        }
+    }
+}
+.showMore{
+    cursor: pointer;
+}
+.ImageCard{
+    overflow-x: hidden;
+    .ChannelSubscribe{
+        @include Circle(25px);
+    }
+}
+.HeadingText{
+    color: var(--color-text);
+    padding: 10px ;
+    font-size: 1.1rem;
+}
+::placeholder{
+    font-weight: 600;
+}
+
+.Main{
+    display: flex;
+    flex-direction: column;
+    padding-left: 270px;
+    padding-top: 50px;
+    // width: calc(100%- 280px);
+    background-color: var(--bg-color);
+    height: 100%;
+    .Hashtags{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: fixed;
+        top: 55px;
+        left: 258px;
+        height: 60px;
+        gap: 10px;
+        background-color: var(--Hashtag-bg);
+        margin: 0px 20px 10px 10px;
+        z-index: 99;
+        .Hashtag{
+            // background-color:var(--Hashtag-color);
+            // padding: 5px 10px;
+            // border-radius: 8px;
+            // transition: .6s ease;
+            // color: var(--color-text);
+            // height: 35px;
+            // font-size: 15px;
+            // white-space: nowrap;
+            margin: 12px 3px;
+            background-color: var(--Hashtag-color);
+            padding: 6px 12px;
+            border: 1px solid var(--Hashtag-color);
+            border-radius: 10px;
+            cursor: pointer;
+            color: var(--color-text);
+            transition: .5s ease;
+            white-space: nowrap;
+            font-size: 1rem;
+            width: fit-content;
+            &:hover{
+                background-color: #ccc;
+            }
+            min-width: 30px;
+        }
+        .arrow{
+            background-color: transparent;
+            @include Circle(30px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .6s ease;
+            position: absolute;
+            right: 0;
+            &:hover{
+                background-color: #ccc;
+            }
+        }
+        .Primary{
+            background-color: var(--color-text);
+            color: var(--bg-color);
+        }
+    }
+    .videos{
+        margin-top: 80px;
+        .videocard{
+
+            .Video{
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+                cursor: pointer;
+                width: 380.66px;
+                margin: 10px 5px;
+                .thumbPhoto{
+                    width: 100%;
+                    height: 220.73px;
+                    border-radius: 10px;
+                    transition: .5s ease;
+                    &:hover{
+                        border-radius: 0;
+                        transform: scale(1.03);
+                    }
+                }
+                .Details{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    margin-top: 10px;
+                    margin-left: 5px;
+                    .ProfilePhoto{
+                        @include Circle(40px);
+                    }
+                    .DetailText{
+                        display: flex;
+                        flex-direction: column;
+                        span{
+                            font-weight: 400;
+                            color: var(--SpanVideo);
+                        }
+                        .NameBrand{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 2px;
+                            text-align: center;
+                            .Icon{
+                                color: var(--SpanVideo);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            span{
+                                color: var(--spanVideoColor);
+                            }
+                        }
+                        .TimeView{
+                            color: var(--spanVideoColor);
+                        }
+                        h3{
+                            line-height: 2rem;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical
+                        }
+                    }
+                }
+            }
+            .Line{
+                margin :8px 0;
+                width: 80vw;
+            }
+        }
+    }
+    .Shotrts{
+        margin: 20px 10px;
+        .HeadingDiv{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            gap: 10px;
+            right: -10px;
+            cursor: pointer;
+            .PhotoShort{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+            .HeadingSection{
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: var(--color-text);
+            }
+        }
+        .ShortCards{
+            margin: 20px 0;
+            .ShortCard{
+                display: flex;
+                flex-direction: column;
+                width: 230.19px;
+                height: 343.23px;
+                padding: 0 10px;
+                // margin: 0 10px;
+                margin: 40px 0;
+                .ImageShort {
+                    height: 343.23px;
+                    width: 100%;
+                    .ImageDiv{
+                        width: 100%;
+                        height: 390px;
+                        border-radius: 10px;
+                    }
+                }
+                .Details{
+                    position: relative;
+                    top: 65px;
+                    margin-bottom: 30px;
+                    h3{
+                        font-weight: 700;
+                        color: var(--color-text);
+                    }
+                    h5{
+                        font-size: .9rem;
+                        color: var(--color-text);
+                    }
+                }
+            }
+        }
+    }
+    .IconArrowBott{
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 5px;
+        transition: .5s ease;
+        &:hover{
+            background-color: #ababab;
+        }
+        .arrowBottom{
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+.LineHight{
+    margin: -10px 0 10px 0;
+}
+/* width */
+.Aside::-webkit-scrollbar {
+    width: 7px;
+    color: white;
+}
+
+/* Track */
+.Aside::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 20px;
+    color: white;
+    visibility: hidden;
+}
+
+/* Handle */
+.Aside::-webkit-scrollbar-thumb {
+    background: rgb(151, 116, 116);
+    border-radius: 20px;
+    // display: none;
+    color: white;
+}
+
+/* Handle on hover */
+.Aside::-webkit-scrollbar-thumb:hover {
+    background: rgb(151, 116, 116);
+    display: block;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    color: white;
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 20px;
+    color: white;
+    visibility: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 20px;
+    display: none;
+    color: white;
+}
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: black;
+//     display: block;
+// }
+
+
+.JsMenu{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: fit-content;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 999;
+    right: 20px;
+    background-color: var(--bg-color);
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .HeaderJsmenu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img{
+            @include Circle(40px);
+        }
+        .NameAccountJsHeader{
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            color: var(--color-text);
+            .AccountTag{
+                position: relative;
+                // left: 7px;
+                color: var(--color-text);
+            }
+            .AlertGoogle{
+                font-size: 1rem;
+                color: #065fd4;
+            }
+        }
+    }
+    .LineJsHeaderMain{
+        width: 100%;
+        margin: 15px 0;
+        border-color: #d0d0d0;
+    }
+    .MainJsmenu{
+        display: flex;
+        flex-direction: column;
+        .CardJsMenuMain{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            transition: .7s ease;
+            padding: 3px;
+            border-radius: 10px;
+            &:hover{
+                background-color: var(--main-color);
+            }
+            .TextSpanDescriptionCard{
+                padding-left: 12px;
+                color: var(--color-text);
+            }
+        }
+        .cardLine2{
+            margin: 5px 0 0;
+        }
+        .SpecialCard{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .LeftSideHeaderJsCardSpecial{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .IconJsArrow{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                top: 8px;
+            }
+        }
+    }
+}
+
+.HideDisp{
+    display: none;
+}
+.DetailText h3 , .DetailText h5{
+    color: var(--color-text);
+}
+i{
+    color: var(--color-text);
+}
+.AdsDev{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .IconDivAD{
+        padding-left: 100px;
+    }
+}
+.Video button{
+    width: 100%;
+    background-color: var(--SpanVideo);
+    margin-top: 5px;
+    border-radius: 15px;
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+}
+.DivNotifi{
+    background-color: #f32;
+    color: #fff;
+    padding: 0 4px;
+    width: 22px;
+    height: 17px;
+    border-radius: 22px;
+    text-align: center;
+    position: relative;
+    right: 10px;
+    bottom: 1px;
+    font-size: 12px;
+}
+@media (max-width : 767px) {
+    .Header .Mid-side {
+        display: none;
+    }
+    .Aside {
+        display: none;
+    }
+
+    .Main {
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width : 767px) and (max-width : 991px) {
+    .Header .Mid-side {
+        display: none;
+    }
+    .Aside .Card{
+        display: flex;
+        flex-direction: column;
+    }
+    .TopEnd{
+        display : none;
+    }
+    .Aside .Card span{
+        // left: auto;
+        // font-size: .8rem;
+    }
+    .LineBreak{
+        display: none;
+    }
+    .Aside{
+        width: 100px;
+    }
+    .HeadingText{
+        display: none;
+    }
+    .Aside .ImageCard , .showMore{
+        display: none;
+    }
+    .Main{
+        margin-left: -180px;
+    }
+    .Main {
+        .videos{
+            .videocard{
+                .Video{
+                    width: 310px;
+                }
+            }
+        }
+    }
+    .Main {
+        .Shotrts {
+            .ShortCards {
+                .ShortCard {
+                    margin: 80px 0;
+                }
+            }
+        }
+
+        .IconArrowBott {
+            margin-top: 30px;
+        }
+    }
+    .Main{
+        .Hashtags{
+            .Hashtag{
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width : 350px) {
+    .Left-side img {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .Main{
+        .Hashtags{
+            display: none;
+        }
+    }
+    .Main{
+        .Shotrts{
+            .ShortCards {
+                .ShortCard{
+                    margin: 84px 0;
+                }
+            }
+        } 
+        .IconArrowBott{
+            margin-top: 20px;
+        }
+    }
+// .Main .Shotrts .ShortCards .ShortCard
+}
+@media (min-width : 1280px) and (max-width : 1700px ){
+    .Video {
+            width: 320px;
+    }
+
+}
+@media (min-width : 1000px) and (max-width : 1100px) {
+    .Main {
+        .videos {
+            .videocard {
+                .Video {
+                    width: 340px;
+                }
+            }
+        }
+    }
+}
+.BaseDis{
+    display: flex;
+}
+
+@media (min-width : 1280px)and (max-width : 1530px) {
+    .Aside{
+        width: 110px;
+            .Card {
+                    display: flex;
+                    flex-direction: column;
+                    span{
+                        left: auto;
+                    }
+            }
+            // .HeadingText{
+            //     display: none;
+            // }
+            .TopEnd{
+                display: none;
+            }
+    }
+    .Main{
+        margin-left: -155px;
+        .videos{
+            .videocard{
+                .Video{
+                    // width: 300px;
+                }
+            }
+        }
+        .Hashtags{
+            left: 105px;
+        }
+        .Shotrts{
+            .ShortCards{
+                .ShortCard{
+                    margin: 70px 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width : 991px) and (max-width : 1280px) {
+    .Main{
+        .Shotrts{
+            .ShortCards{
+                .ShortCard{
+                    margin: 80px 0;
+                }
+            }
+        }
+    }
+}
+// Card Aside
+
+.ColAside{
+    display: flex;
+    flex-direction: column;
+}
+.rowAside{
+    display: flex;
+    flex-direction: row;
+}
+.block{
+    display: block;
+}
+// .AsideCardsNone{
+//     display: flex;
+//     flex-direction: column;
+
+// }
+
+// End
+
+.NoneDisplay{
+    display: none;
+}
+
+.FlexDisb{
+    display: flex;
+}
+
+
+.spanLeft{
+    left: auto;
+    font-size: .9rem;
+}
+.ColorNone{
+    display: none;
+}
+
+.colors{
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+    justify-content: center;
+    list-style: none;
+    .color{
+        @include Circle(30px);
+        cursor: pointer;
+    }
+    .BasicWhite{
+        background-color: #fff;
+        list-style: none;
+    }
+    .Basic{
+        list-style: none;
+        background-color: var(--color-Next);
+    }
+    .red{
+        list-style: none;
+        background-color: red;
+    }
+    .green{
+        list-style: none;
+        background-color: green;
+    }
+    .blue{
+        list-style: none;
+        background-color: blue;
+    }
+    .yello{
+        list-style: none;
+        background-color: #ffc400;
+    }
+    .beige{
+        list-style: none;
+        background-color: #DDD0C8;
+    }
+    .orangBlack{
+        background-color:rgb(133, 76, 10);
+    }
+}
+.active{
+    transform: scale(1.1);
+}
+.nonedisp{
+    display: none;
+}

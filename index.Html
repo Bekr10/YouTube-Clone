@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">    
+    <link rel="icon" href="Images/you-tube-2017-icon-seeklogo.com-4.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="Header">
+        <div class="Left-side">
+            <i class="material-icons"id="AsideDisplay">menu </i>
+            <img  src="Images/youtube-logo-removebg-preview.png"  alt="">
+        </div>
+        <div class="Mid-side">
+            <form action="">
+                <div class="SearchInput">
+                    <input type="search" class="Search" placeholder="Search">
+                </div>
+                <i class="fa-solid fa-magnifying-glass SearchIcon"></i>
+                <i class="fa-solid fa-microphone record"></i>
+            </form>
+        </div >
+        <div class="Right-side">
+            <div class="Create">
+                <i class="material-icons createicon">video_call</i>
+            </div>
+            <div class="flex flex-row">
+                <i class="material-icons">notifications</i>
+                <span class="DivNotifi">9+</span>
+            </div>
+            <div class="JsMenuDesc">
+                <img src="Images/MyImg.jpg" alt="" class="PhotoAccount" id="ClickJsMenuDisplay" onclick="DisplayJsmenu()" ondblclick="HideJsMenu()">
+                <div class="JsMenu VisibleDispl HideDisp" id="DisplayListFlex">
+                    <div class="HeaderJsmenu">
+                        <img src="Images/MyImg.jpg" alt="">
+                        <div class="NameAccountJsHeader">
+                            <span>Ahmed Sluch</span>
+                            <span class="AccountTag">@Ahmed Sluch</span>
+                            <span class="AlertGoogle">Manage your Google Account</span>
+                        </div>
+                    </div>
+                    <hr class="LineJsHeaderMain">
+                    <div class="MainJsmenu">
+                        <div class="CardJsMenuMain">
+                            <i class="material-icons">account_box</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Your channel</a></span>
+                        </div> 
+                        <div class="CardJsMenuMain cardLine2 SpecialCard">
+                            <div class="LeftSideHeaderJsCardSpecial">
+                                <i class="material-icons">switch_account</i>
+                                <span class="TextSpanDescriptionCard"><a href="">Switch account</a></span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right IconJsArrow"></i>
+                            </div>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2">
+                            <i class="material-icons">logout</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Sign out</a></span>
+                        </div>
+                        <hr class="LineJsHeaderMain">
+                        <div class="CardJsMenuMain">
+                            <i class="material-icons">monetization_on</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Purchases and memeberships</a></span>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2">
+                            <i class="material-icons">person</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Your data in YouTube</a></span>
+                        </div>
+                        <hr class="LineJsHeaderMain">
+                        <div class="CardJsMenuMain  SpecialCard" id="ModeColorChange">
+                            <div class="LeftSideHeaderJsCardSpecial">
+                                <i class="material-icons">light_mode</i>
+                                <span class="TextSpanDescriptionCard">Apperance: Light</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right IconJsArrow"></i>
+                            </div>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2 SpecialCard">
+                            <div class="LeftSideHeaderJsCardSpecial">
+                                <i class="material-icons">translate</i>
+                                <span class="TextSpanDescriptionCard"><a href="">Language: English</a></span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right IconJsArrow"></i>
+                            </div>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2 SpecialCard">
+                            <div class="LeftSideHeaderJsCardSpecial">
+                                <i class="material-icons">admin_panel_settings</i>
+                                <span class="TextSpanDescriptionCard"><a href="">Restricted Mode: off</a></span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right IconJsArrow"></i>
+                            </div>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2 SpecialCard">
+                            <div class="LeftSideHeaderJsCardSpecial">
+                                <i class="material-icons">location_on</i>
+                                <span class="TextSpanDescriptionCard"><a href="">Location: Egypt</a></span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right IconJsArrow"></i>
+                            </div>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2 SpecialCard" id="ColorBut">
+                            <div class="LeftSideHeaderJsCardSpecial">
+                                <i class="material-icons">palette</i>
+                                <span class="TextSpanDescriptionCard" id="SoanColor">color: default</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right IconJsArrow"></i>
+                            </div>
+                        </div>
+                        <div class="colors NoneDisplay" id="colorsViewDisplayNoneOrFlex">
+                            <li class="Basic color active" id="black" data-color="black"></li>
+                            <li class="red color ColorNone" id="red" data-color="red"></li>
+                            <li class="yello color ColorNone" id="yello" data-color="yello"></li>
+                            <li class="green color" id="green" data-color="green"></li>
+                            <li class="beige color ColorNone" id="beige" data-color="beige"></li>
+                            <li class="blue color " id="blue" data-color="blue"></li>
+                            <li class="orangBlack color " id="orangBlack" data-color="orangBlack"></li>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2">
+                            <i class="material-icons">keyboard</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Keyboard shortcuts</a></span>
+                        </div>
+                        <hr class="LineJsHeaderMain">
+                        <div class="CardJsMenuMain">
+                            <i class="material-icons">settings</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Settings</a></span>
+                        </div>
+                        <hr class="LineJsHeaderMain">
+                        <div class="CardJsMenuMain">
+                            <i class="material-icons">help</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Help</a></span>
+                        </div>
+                        <div class="CardJsMenuMain cardLine2">
+                            <i class="material-icons">feedback</i>
+                            <span class="TextSpanDescriptionCard"><a href="">Send feedback</a></span>
+                        </div>
+                        <!-- cardLine2 -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <div class=""> 
+
+        </div>
+    </div>
+    <div class="Aside" id="AsideDev">
+        <div class="Top">
+            <div class="TopFirst " id="TheFirst">
+                <div class="Card Card-spici " id="One">
+                    <i class="material-icons ">home </i>
+                    <span id="spanone">Home</span>
+                </div>
+                <div class="Card " id="two">
+                    <i class="material-icons">explore</i>
+                    <span id="spantwo">Explore</span>
+                </div>
+                <div class="Card " id="three">
+                    <!-- <a href="https://www.youtube.com/feed/subscriptions"> -->
+                        <i class="material-icons">subscriptions</i>
+                        <span id="spanthree">Subscriptions</span>
+                    <!-- </a> -->
+                </div>
+                <hr id="LineBreak">
+                <div class="Card " id="four">
+                    <!-- <a href="https://www.youtube.com/feed/library"> -->
+                        <i class="material-icons">video_library</i>
+                        <span id="spanfour">Library</span>
+                    <!-- </a> -->
+                </div>
+            </div>
+            <div class="TopEnd" id="TheEnd">
+                <div class="Card ">
+                    <!-- <a href="https://www.youtube.com/feed/history"> -->
+                        <i class="material-icons">history</i>
+                        <span>History</span>
+                    <!-- </a> -->
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">slideshow</i>
+                    <span>Your videos</span>
+                </div>
+                <div class="Card ">
+                    <!-- <a href="https://www.youtube.com/playlist?list=WL"> -->
+                        <i class="material-icons">schedule</i>
+                        <span>Watch later</span>
+                    <!-- </a> -->
+                </div>
+                <div class="Card ">
+                    <!-- <a href="https://www.youtube.com/playlist?list=LL"> -->
+                        <i class="material-icons">thumb_up</i>
+                        <span>Liked videos</span>
+                    <!-- </a> -->
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">playlist_play</i>
+                    <span>My videos</span>
+                </div>
+                <hr>
+                <h3 class="HeadingText">Subscriptions</h3>
+                <div class="Card ImageCard ">
+                    <a href="">
+                        <img src="Images/Mahmood Al Durrah.jpg" alt="" class="ChannelSubscribe">
+                        <span>Mahmood Al Durrah</span>
+                    </a>
+                </div>
+                <div class="Card ImageCard ">
+                    <a href="">
+                        <img src="Images/Film Gmaed.jpg" alt="" class="ChannelSubscribe">
+                        <span>Film Gamed</span>
+                    </a>
+                </div>
+                <div class="Card ImageCard WhiteSpecial ">
+                    <a href="">
+                        <img src="Images/Arabhardware.jpg" alt="" class="ChannelSubscribe">
+                        <span>Arabhardware - عرب هاردوير</span>
+                    </a>
+                </div>
+                <div class="Card ImageCard ">
+                    <a href="">
+                        <img src="Images/Codezilla.jpg" alt="" class="ChannelSubscribe">
+                        <span>Codezilla</span>
+                    </a>
+                </div>
+                <div class="Card ImageCard ">
+                    <a href="">
+                        <img src="Images/يحيي عزام.jpg" alt="" class="ChannelSubscribe">
+                        <span>يحيي عزام</span>
+                    </a>
+                </div>
+                <div class="nonedisp cardDisp">
+                    <div class="Card ImageCard " >
+                        <a href="">
+                            <img src="Images/يحيي عزام.jpg" alt="" class="ChannelSubscribe">
+                            <span>يحيي عزام</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="Card showMore ">
+                    <i class="material-icons">expand_more</i>
+                    <span>Show 3 more</span>
+                </div>
+                <hr>
+                <h3 class="HeadingText">Explore</h3>
+                <div class="Card ">
+                    <i class="material-icons">trending_up</i>
+                    <span>Trending</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">music_note</i>
+                    <span>Music</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">stream</i>
+                    <span>Live</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">sports_esports</i>
+                    <span>Gaming</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">emoji_events</i>
+                    <span>Sports</span>
+                </div>
+                <hr>
+                <h3 class="HeadingText">More from youtube</h3>
+                <div class="Card ">
+                    <img src="Images/you-tube-2017-icon-seeklogo.com-4.svg" class="ImageLogo"  alt="">
+                    <span>YouTube Premium</span>
+                </div>
+                <div class="Card ">
+                    <img src="Images/Youtube Studio.svg" class="ImageLogo"  alt="">
+                    <span>YouTube Studio</span>
+                </div>
+                <div class="Card ">
+                    <img src="Images/youtube-music-seeklogo.com.svg" class="ImageLogo"  alt="">
+                    <span>YouTube Music</span>
+                </div>
+                <div class="Card ">
+                    <img src="Images/youtube-kids-seeklogo.com.svg" class="ImageLogo"  alt="">
+                    <span>YouTube Kids</span>
+                </div>
+                <hr>
+                <div class="Card ">
+                    <i class="material-icons">settings</i>
+                    <span>Settings</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">flag</i>
+                    <span>Report history</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">help</i>
+                    <span>Help</span>
+                </div>
+                <div class="Card ">
+                    <i class="material-icons">feedback</i>
+                    <span>Send feedback</span>
+                </div>
+                <hr>    
+                <div class="System">
+                    <h1 class="System-one">
+                        About Press Copyright
+                        Contact us Creators
+                        Advertise Developers
+                    </h1>
+                    <h1>
+                        TermsPrivacyPolicy & SafetyHow YouTube worksTest new features
+                    </h1>
+                    <h1 class="System-end">
+                        © 2023 Google LLC
+                    </h1>
+                </div>
+            </div>
+
+            </div>
+    </div>
+    <div class="Main" id="MainSection">
+        <div class="Hashtags" id="Hash">
+            <div class="Hashtag Primary">All</div>
+            <div class="Hashtag">Zamalek SC</div>
+            <div class="Hashtag">FIFA</div>
+            <div class="Hashtag">Primer League</div>
+            <div class="Hashtag">Cristiano Ronaldo</div>
+            <div class="Hashtag">Openhimer</div>
+            <div class="Hashtag">Marvel Studios</div>
+            <div class="Hashtag">Al Ahly SC</div>
+            <div class="Hashtag">Real Madrid</div>
+            <div class="Hashtag">UEFA Champions League</div>
+            <div class="Hashtag">Television Series</div>
+            <div class="Hashtag">Elzero Web School</div>
+            <div class="Hashtag">Egyption League</div>
+            <div class="Hashtag">Egyption League</div>
+            <div class="Hashtag">Egyption League</div>
+            <i class="fa-solid fa-arrow-right arrow"></i>
+        </div>
+        <div class="videos">
+            <div class="videocard  grid grid-col-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                <div class="Video">
+                    <img src="Images/Ads.jpg" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/AdsProfile.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <div class="AdsDev">
+                                <div>
+                                    <h3>All Courses & Tutorials Online</h3>
+                                </div>
+                                <div class="IconDivAD">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                            <div class="NameBrand">
+                                <span>Ad . Codeacademy</span>
+                            </div>
+                            <button>Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Video">
+                    <img src="Images/hqdefault.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/Alfouzane.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>نهائي تحدي الثلاثين|عبدالله أشكناني وسليمان عبدالغفور💣 </h3>
+                            <div class="NameBrand">
+                                <span>M12 ALFOUZAN - قدم الكرة</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">3.8M views . 9 months ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/Ronaldo Aldheh.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/ChannelProfile.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>كريستيانو رونالدو - الجزء التاني | الدحيح </h3>
+                            <div class="NameBrand">
+                                <span>New Media Academy Life</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">90K views . 4 hours ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/Betaa Aflam.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/Aflam.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3> ترشيحات افلام من الآخر 🍿🎬 | اتفرج على الحلقة دى 😉</h3>
+                            <div class="NameBrand">
+                                <span>Beta3 Aflam - بتاع افلام</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">29K views . 1 day ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/Uf.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile (7).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3> صفقات الأهلي قبل كاس العالم - أزمة قيد الزمالك - فرصة بيراميدز الأخيرة - صفقات قوية للمصري والاتحاد</h3>
+                            <div class="NameBrand">
+                                <span> EL BALF - الاسطى عبده الـبلــف</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">118K views . 13 day ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/Alduura.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/Mahmood Al Durrah.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3> عرض و تصوير في مكان غريب في نص الصحرة</h3>
+                            <div class="NameBrand">
+                                <span>   Mahmood Al Durra</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">18K views . 7 hours ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/hq720.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile (1).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3> الميول الكروية لرؤساء مصر.. 3 اهلاوية و3 زملكاوية</h3>
+                            <div class="NameBrand">
+                                <span>AlmasryAlyoum المصري اليوم</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">108K views . 5 Years ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/hq720-_2_.jpg" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile (3).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>[Arabic] Learn JavaScript In One Video - Part One</h3>
+                            <div class="NameBrand">
+                                <span>Elzero Web School</span> 
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">105K views . 6 Months ago</h5>
+                        </div>
+                    </div>
+                </div>  
+                <div class="Video">
+                    <img src="Images/Eyad.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/ON.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>هجرس خلى الفنان "إياد نصار" يتجنن وساب المهرجان ومشي 😁 - #الكبير_أوي6</h3>
+                            <div class="NameBrand">
+                                <span>ON</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">747K views . 1 year ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/Barakat.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/dmc.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>تع اشرب شاي - إضحك مع محمد بركات وأقوى المقالب في سيد معوض " وأخر مرة بوست على راسه علشان يسامحني "</h3>
+                            <div class="NameBrand">
+                                <span>dmc</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">2.4M views . 6 years ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/Adnan.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/Mohammed Adnan.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>سقط العملاق وبرشلونة تصدر وصاعقة عربية مدوية في الدوري الفرنسي 😱</h3>
+                            <div class="NameBrand">
+                                <span>محمد عدنان Mohamad Adnan</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">1.3M views . 19 hours ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/Fifa.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/ChannelFifaBoltex.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>أول ضحية ليا في بيس 24..😈</h3>
+                            <div class="NameBrand">
+                                <span>3li boltx</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">393K views . 8 days ago</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="Line">
+        <div class="Shotrts flex flex-col">
+            <div class="HeadingDiv">
+                <img src="Images/5593493-middle-removebg-preview.png" alt="" class="PhotoShort">
+                <h3 class="HeadingSection">Shorts</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 ShortCards ">
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/oar2 (1).jpg" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>زرت أكبر محافظة مصرية! 🤯🇪🇬</h3>
+                        <h5>3.1M view</h5>
+                    </div>
+                </div>
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/Miranda.webp" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>Miranda cohen Fitness 🔥🔥|| #fitness #workout #gym</h3>
+                        <h5>10M view</h5>
+                    </div>
+                </div>
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/hq720 (10).webp" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>
+                            Ghosted | Chris Evans | Ana de Armas | HD WhatsApp Status | ZION
+                        </h3>
+                            
+                        <h5>1.4M view</h5>
+                    </div>
+                </div>
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/oar2 (3).jpg" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>أحمد السقا : شايف اني أحمد مكي المفروض يعمل حاجة غير الكبير | مع فاطمة مصطفى</h3>
+                        <h5>171K view</h5>
+                    </div>
+                </div>
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/oar2 (4).jpg" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>لونا عايزة تروح تحفر في المقام مع مسعود بلبس مهرجان السينما 😂😂 #سره_الباتع#shorts</h3>
+                        <h5>191K view</h5>
+                    </div>
+                </div>
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/hq720 (1).webp" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>"هشام ماجد رأيه fair دايماً"❤️</h3>
+                        <h5>733K view</h5>
+                    </div>
+                </div>
+                <div class="ShortCard">
+                    <div class="ImageShort">
+                        <img class="ImageDiv" src="Images/hq720_2 (1).webp" alt="">
+                    </div>
+                    <div class="Details">
+                        <h3>Avengers Drawing Wait for RDJ 🔥#shorts</h3>
+                        <h5>55M view</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="IconArrowBott">
+                <i class="fa-solid fa-arrow-down arrowBottom"></i>
+            </div>
+        </div>
+        <hr class="LineHight">
+        <div class="videos">
+            <div class="videocard grid grid-col-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                <div class="Video">
+                    <img src="Images/Yosusef.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile (2).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>يوسف الشريف مع نصوحي✨ | تحدي "العالمي" ومستواه جبار.. شابو 🔥😱</h3>
+                            <div class="NameBrand">
+                                <span>Saba7o Korah - صباحو كورة</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">1.4M views . 1 year ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/Elzerrrro.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile (3).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>بذاكر كتير ومش لاقي شغل</h3>
+                            <div class="NameBrand">
+                                <span>Elzero Web School</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">90K views . 1 year ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/Skrroo.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/يحيي عزام.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>هي الدنيا دايما كدة يوم في إيدك ويوم اسكرو || الحلقة قبل الأخيرة مع نجوم الكوميديا عمر، فكري وحسام</h3>
+                            <div class="NameBrand">
+                                <span>يحيي عزام</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">117K views . 2 days ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/hq720 (17).webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile (8).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>ما لا تعرفه عن فيلم The Dark Knight / 2008
+                            </h3>
+                            <div class="NameBrand">
+                                <span>Movie Convo محمد فريد</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">71K views . 2 years ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/hq720 (16).jpg" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/unnamed (8).jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>😂😂😂تجميعة من النكت القلشة بتاعة الابهات و صريخ ضحك من رد فعل محمد إمام و عبدالجليل</h3>
+                            <div class="NameBrand">
+                                <span>Spot 2000</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">364K views . 5 months ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/hq720 (2).webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/Bein.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>تحدي الثلاثين - الحلقة 3 | هيثم فاروق وعبدالله اشكناني | مع مساعد الفوزان</h3>
+                            <div class="NameBrand">
+                                <span>beIN SPORTS</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">2.7M views . 11 months ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/Mabqetc.webp" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/Mogzz.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>مبقتش حمل رجالة الجيم | Egyptian Gym Content</h3>
+                            <div class="NameBrand">
+                                <span>Mogzz</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">569K views . 5 months ago</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video">
+                    <img src="Images/hq720.jpg" alt="" class="thumbPhoto">
+                    <div class="Details">
+                        <img src="Images/channels4_profile.jpg" alt="" class="ProfilePhoto">
+                        <div class="DetailText">
+                            <h3>عودة مستر جون وايت 😎 - طلبنا الاكل بالانجليزي🇺🇸 و بالعربي🇪🇬 الجزء الثاني ✌🏼</h3>
+                            <div class="NameBrand">
+                                <span>Amr Sherif</span>
+                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                                    style="pointer-events: none; display: block; width: 13px; height: 13px;" class="Icon">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h5 class="TimeView">268K views . 1 day ago</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.Js">
+
+    </script>
+</body>
+</html>
